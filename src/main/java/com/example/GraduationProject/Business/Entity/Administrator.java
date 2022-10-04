@@ -1,15 +1,23 @@
-package Service;
+package com.example.GraduationProject.Business.Entity;
 
-public class Admin {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Administrator {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long adminID;
     private String name;
     private String adminUserName;
     private String password;
 
-    public Admin() {
+    public Administrator() {
     }
 
-    public Admin(long adminID, String name, String adminUserName, String password) {
+    public Administrator(long adminID, String name, String adminUserName, String password) {
         this.adminID = adminID;
         this.name = name;
         this.adminUserName = adminUserName;

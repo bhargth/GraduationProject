@@ -1,15 +1,15 @@
-package RepositoryLayer;
+package com.example.GraduationProject.Business;
 
-public class Payment {
+public class PaymentBean {
     private long paymentID;
     private long cardNumber;
     private String expiryDate;
     private String nameOnCard;
 
-    public Payment() {
+    public PaymentBean() {
     }
 
-    public Payment(long paymentID, long cardNumber, String expiryDate, String nameOnCard) {
+    public PaymentBean(long paymentID, long cardNumber, String expiryDate, String nameOnCard) {
         this.paymentID = paymentID;
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;

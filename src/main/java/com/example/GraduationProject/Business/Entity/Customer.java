@@ -1,24 +1,39 @@
-package Service;
+package com.example.GraduationProject.Business.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long customerID;
-    private String firstName;
-    private String lastName;
+    private String customerName;
     private int mobileNumber;
     private String emailID;
     private String address;
 
+
+
     public Customer() {
     }
 
-    public Customer(long customerID, String firstName, String lastName, int mobileNumber, String emailID, String address) {
+    public Customer(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public Customer(long customerID, String customerName, int mobileNumber, String emailID, String address) {
         this.customerID = customerID;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.customerName = customerName;
         this.mobileNumber = mobileNumber;
         this.emailID = emailID;
         this.address = address;
     }
+
+
 
     public long getCustomerID() {
         return customerID;
@@ -28,20 +43,13 @@ public class Customer {
         this.customerID = customerID;
     }
 
-    public String getFirstName() {
-        return firstName;
+
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public int getMobileNumber() {
@@ -72,8 +80,7 @@ public class Customer {
     public String toString() {
         return "Customer{" +
                 "customerID=" + customerID +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", customerName='" + customerName + '\'' +
                 ", mobileNumber=" + mobileNumber +
                 ", emailID='" + emailID + '\'' +
                 ", address='" + address + '\'' +

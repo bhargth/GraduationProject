@@ -1,18 +1,10 @@
-package PresentationLayer;
+package com.example.GraduationProject.PresentationLayer;
 
-import Service.Customer;
-import Service.Product;
-import Service.ShoppingCart;
+import com.example.GraduationProject.Business.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
 public class Controller {
-
-    @Autowired
-    Customer customer;
-
-    @Autowired
-    Product product;
 
     @Autowired
     ShoppingCart shoppingCart;
@@ -20,3 +12,5 @@ public class Controller {
     @GetMapping("/")
     public String home() { return  "index" ;}
 }
+
+
