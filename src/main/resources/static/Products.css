@@ -1,104 +1,30 @@
-body {
-
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-
-  .navbar{
-    background-color:lightblue;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-
-    }
-
-    .navHeaderTitle{
-        margin-right: 170px;
-        margin-left: 200px;
-        font-weight: bold;
-    }
-
-    .container-fluid a {
-        padding: 10px;
-        font-size: 16px;
-        font-style: normal;
-        margin-right: 10px;
-    }
-
-
-
-    .signupCont{
-    background-color: lightgray;
-    width: 60%;
-    height: 60%;
-    margin-top: 70px;
-    margin-left: 250px;
-
-    }
-
-  input[type=text], input[type=password], input[type=tel] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-input[type=text]:focus, input[type=password], input[type=tel]:focus {
-  background-color: #ddd;
-  outline: none;
-}
 
-input[type=checkbox] {
-  margin-bottom:15px;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 7px 10px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity:1;
-}
-
-.cancelbtn {
-  background-color: #f44336;
-    margin-left:220px;
-    text-align: center;
-}
-
-.signupbtn{
-    margin-right: 30px;
-}
-
-.container {
-  padding: 16px;
-
-}
-
-.clearfix{
+.navbar{
+background-color:lightblue;
 display: flex;
 justify-content: space-between;
+padding: 15px;
 
 }
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+
+.navHeaderTitle{
+    margin-right: 170px;
+    margin-left: 200px;
+    font-weight: bold;
 }
 
+.container-fluid a {
+    padding: 10px;
+    font-size: 16px;
+    font-style: normal;
+    margin-right: 10px;
+}
 
+/* Main Footer */
 footer .main-footer{  padding: 20px 0;  background: lightblue; margin-top: 30px;}
 footer ul{  padding-left: 0;  list-style: none;}
 
@@ -170,13 +96,4 @@ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 -ms-transition: all 250ms ease-in-out 0s;
 -o-transition: all 250ms ease-in-out 0s;
 transition: all 250ms ease-in-out 0s;
-}
-
-
-
-
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-    width: 50;
-  }
 }

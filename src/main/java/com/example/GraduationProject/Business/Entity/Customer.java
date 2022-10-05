@@ -21,6 +21,9 @@ public class Customer {
     public Customer() {
     }
 
+    public Customer(Customer customer) {
+    }
+
     public Customer(String customerName) {
         this.customerName = customerName;
     }
@@ -32,6 +35,7 @@ public class Customer {
         this.emailID = emailID;
         this.address = address;
     }
+
 
 
 
