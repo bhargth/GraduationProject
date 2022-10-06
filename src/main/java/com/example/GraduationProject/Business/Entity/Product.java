@@ -18,7 +18,13 @@ public class Product {
     public Product() {
     }
 
-    public Product(long productID, int price, String size, String description) {
+    public Product(String description, int price, String size) {
+        this.price = price;
+        this.size = size;
+        this.description = description;
+    }
+
+    public Product(long productID, String description, int price, String size) {
         this.productID = productID;
         this.price = price;
         this.size = size;

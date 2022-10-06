@@ -21,7 +21,7 @@ public class CustomerService {
     }
 
 
-    /*public boolean login(String customerName) {
+    public boolean login(String customerName) {
         List<Customer> clist = custRep.findByName(customerName);
         if(clist.size()>0) {
             customer = clist.get(0);
@@ -32,9 +32,8 @@ public class CustomerService {
     }
 
     public void signUp(Customer customer){
-        List<Customer> clist = new ArrayList<>();
-        clist.add(customer);
-        custRep.save(new Customer((Customer) clist));
+        custRep.save(customer);
+
     }
-*/
+
 }

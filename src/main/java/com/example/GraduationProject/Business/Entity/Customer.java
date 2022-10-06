@@ -11,7 +11,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long customerID;
-    private String customerName;
+    private String name;
     private int mobileNumber;
     private String emailID;
     private String address;
@@ -25,12 +25,12 @@ public class Customer {
     }
 
     public Customer(String customerName) {
-        this.customerName = customerName;
+        this.name = customerName;
     }
 
-    public Customer(long customerID, String customerName, int mobileNumber, String emailID, String address) {
+    public Customer(long customerID, String name, int mobileNumber, String emailID, String address) {
         this.customerID = customerID;
-        this.customerName = customerName;
+        this.name = name;
         this.mobileNumber = mobileNumber;
         this.emailID = emailID;
         this.address = address;
@@ -48,12 +48,12 @@ public class Customer {
     }
 
 
-    public String getCustomerName() {
-        return customerName;
+    public String getName() {
+        return name;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getMobileNumber() {
@@ -84,7 +84,7 @@ public class Customer {
     public String toString() {
         return "Customer{" +
                 "customerID=" + customerID +
-                ", customerName='" + customerName + '\'' +
+                ", customerName='" + name + '\'' +
                 ", mobileNumber=" + mobileNumber +
                 ", emailID='" + emailID + '\'' +
                 ", address='" + address + '\'' +

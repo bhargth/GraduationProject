@@ -2,13 +2,10 @@ package com.example.GraduationProject.PresentationLayer;
 
 import com.example.GraduationProject.Business.CustomerService;
 import com.example.GraduationProject.Business.Entity.Customer;
-import com.example.GraduationProject.Business.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class CustomerController {
@@ -19,11 +16,37 @@ public class CustomerController {
     @GetMapping("/")
     public String home() { return  "homePage" ;}
 
-    @RequestMapping("/signupForm")
-    public String signUp() { return  "signupForm" ;}
+    @GetMapping("/signupForm")
+    public String signUp(Model model) {
+    model.addAttribute("customer", new Customer());
+    return "signupForm";
+    }
 
-    @RequestMapping("/LoginPage")
+@PostMapping("/signupForm")
+public String signupSubmit(@ModelAttribute Customer customer, Model model){
+custser.signUp(customer);
+model.addAttribute("customer",customer);
+return "products";
+}
+
+    @GetMapping("/LoginPage")
     public String logIn() { return  "LoginPage" ;}
+
+    @PostMapping("/LoginPage")
+    public String logIn(@RequestParam("customername") String name, Model model){
+
+       if(custser.login(name)){
+           model.addAttribute("customername",name);
+           return "products";
+       }else {
+           model.addAttribute("message", "Try again!");
+           return "LoginPage";
+       }
+
+    }
+
+
+
 
     @RequestMapping("/HowitWorks")
     public String howItWorks() { return  "HowitWorks" ;}
@@ -37,7 +60,10 @@ public class CustomerController {
     public String products() { return  "products" ;}
 
 
-}
+
+    }
+
+
 
 
 
