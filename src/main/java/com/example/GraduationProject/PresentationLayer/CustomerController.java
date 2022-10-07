@@ -2,16 +2,24 @@ package com.example.GraduationProject.PresentationLayer;
 
 import com.example.GraduationProject.Business.CustomerService;
 import com.example.GraduationProject.Business.Entity.Customer;
+import com.example.GraduationProject.Business.Entity.Product;
+import com.example.GraduationProject.Business.ProductService;
+import com.example.GraduationProject.RepositoryLayer.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class CustomerController {
 
 @Autowired
     CustomerService custser;
+
+@Autowired
+    ProductService prodser;
 
     @GetMapping("/")
     public String home() { return  "homePage" ;}
@@ -46,6 +54,13 @@ return "products";
     }
 
 
+    @GetMapping("/products")
+    public String displayProducts(Model model){
+        model.addAttribute("products", prodser.getProducts());
+        return "products";
+    }
+
+
 
 
     @RequestMapping("/HowitWorks")
@@ -56,8 +71,7 @@ return "products";
         return  "aboutusPage" ;
     }
 
-    @RequestMapping("/products")
-    public String products() { return  "products" ;}
+
 
 
 

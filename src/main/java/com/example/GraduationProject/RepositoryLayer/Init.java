@@ -8,11 +8,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/*
 @Component
 public class Init implements CommandLineRunner {
+*/
 
-    @Autowired
-    ProductRepository prodrepo;
+    /*@Autowired
+    ProductRepository prodrepo;*/
 
 /*    public void saveProduct() {
         product.setPrice(20);
@@ -27,8 +29,8 @@ public class Init implements CommandLineRunner {
         prodrepo.save(new Product("Floral dress",100,"M"));
     }*/
 
-    @Override
-    public void run(String... args) throws Exception {
+
+    /*public void run(String... args) throws Exception {
         prodrepo.saveAll(List.of(
                 new Product("Floral dress",50,"M"),
                 new Product("Dotted dress",180,"S"),
@@ -39,5 +41,5 @@ public class Init implements CommandLineRunner {
         );
 
         System.out.println("Data Saved");
-    }
-}
+    }*/
+

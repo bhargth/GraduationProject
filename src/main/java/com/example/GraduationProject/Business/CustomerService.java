@@ -17,6 +17,8 @@ public class CustomerService {
     @Autowired
     CustomerRepository custRep;
 
+    ShoppingCart cart = new ShoppingCart();
+
     public CustomerService() {
     }
 
@@ -35,5 +37,7 @@ public class CustomerService {
         custRep.save(customer);
 
     }
+
+
 
 }

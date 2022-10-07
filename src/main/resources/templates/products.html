@@ -6,34 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link href= "Products.css" rel= "stylesheet">
     <title>Products</title>
 </head>
 <body>
 <div class="navHeader">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/aboutusPage">ABOUT US</a>
+            <a class="navbar-brand" href="#">ABOUT US</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/aboutusPage">SUSTAINABILITY</a>
+                        <a class="nav-link active" aria-current="page" href="#">SUSTAINABILITY</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/products">PRODUCTS</a>
+                        <a class="nav-link active" href="#">PRODUCTS</a>
                     </li>
                     <h3 class="navHeaderTitle">BY ROTATION</h3>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/HowitWorks">HOW IT WORKS</a>
+                        <a class="nav-link active" href="#">HOW IT WORKS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/LoginPage">LOGIN</a>
+                        <a class="nav-link active" href="#">LOGIN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/signupForm">SIGNUP</a>
+                        <a class="nav-link active" href="#">SIGNUP</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -44,6 +44,42 @@
         </div>
     </nav>
 </div>
+<div class="ProductsCont">
+<div th:each="product[] : ${products}">
+    <div class="card" style="width: 18rem; height: 30rem;">
+        <img class="card-img-top" src="images/dress1.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${product.description}">Card title</h5>
+            <p class="card-text" th:text="${product.price}"></p>
+            <p class="card-text" th:text="${product.size}"></p>
+            <a href="#" class="btn">ADD TO CART</a>
+        </div>
+    </div>
+    <!--<div class="card" style="width: 18rem; height: 30rem;">
+        <img class="card-img-top" src="images/dress2.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${product.description}">Card title</h5>
+            <p class="card-text" th:text="${product.price}"></p>
+            <p class="card-text" th:text="${product.size}"></p>
+            <a href="#" class="btn">ADD TO CART</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem; height: 30rem;">
+        <img class="card-img-top" src="images/dress3.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${product.description}">Card title</h5>
+            <p class="card-text" th:text="${product.price}"></p>
+            <p class="card-text" th:text="${product.size}"></p>
+            <a href="#" class="btn">ADD TO CART</a>
+        </div>
+    </div>-->
+</div>
+</div>
+
+
+
+
+
 
 <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
@@ -60,16 +96,16 @@
                         <h5 class="widget-title">Quick Links<span></span></h5>
                         <ul class="thumbnail-widget">
                             <li>
-                                <div class="thumb-content"><a href="/aboutusPage">About US</a></div>
+                                <div class="thumb-content"><a href="#.">About US</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="/products">Products</a></div>
+                                <div class="thumb-content"><a href="#.">Products</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="/aboutusPage">Sustainability</a></div>
+                                <div class="thumb-content"><a href="#.">Sustainability</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="/HowitWorks">How it works</a></div>
+                                <div class="thumb-content"><a href="#.">How it works</a></div>
                             </li>
                         </ul>
                     </div>
