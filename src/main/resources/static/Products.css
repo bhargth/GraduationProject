@@ -26,14 +26,16 @@ padding: 15px;
 
 
 .ProductsCont{
+display: inline-grid;
+ grid-template-columns: auto auto auto;
 
-  display: flex;
-  justify-content: space-between;
-  margin: 30px;
-  margin-left: 60px;
-  margin-right: 60px;
 }
 
+.card{
+  margin: 30px;
+  margin-left: 110px;
+  margin-right: 80px;
+}
 .card-img-top{
   height: 75%;
 }

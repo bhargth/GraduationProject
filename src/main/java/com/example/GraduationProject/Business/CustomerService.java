@@ -1,7 +1,9 @@
 package com.example.GraduationProject.Business;
 
 import com.example.GraduationProject.Business.Entity.Customer;
+import com.example.GraduationProject.Business.Entity.Product;
 import com.example.GraduationProject.RepositoryLayer.CustomerRepository;
+import com.example.GraduationProject.RepositoryLayer.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
@@ -16,6 +18,9 @@ public class CustomerService {
 
     @Autowired
     CustomerRepository custRep;
+
+    @Autowired
+    ProductRepository prodRep;
 
     ShoppingCart cart = new ShoppingCart();
 
@@ -38,6 +43,13 @@ public class CustomerService {
 
     }
 
+    public void addToCart(long productId){
+        Product p= prodRep.findById(productId).get();
+        cart.addProduct(p);
+    }
 
+    public ShoppingCart getCart(){
+        return cart;
+    }
 
 }

@@ -22,18 +22,15 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">SUSTAINABILITY</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">PRODUCTS</a>
-                    </li>
                     <h3 class="navHeaderTitle">BY ROTATION</h3>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">HOW IT WORKS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">LOGIN</a>
+                        <a class="nav-link active" href="#">LOGOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">SIGNUP</a>
+                        <a class="nav-link active" href="/shoppingcart">SHOPPINGCART</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -45,38 +42,21 @@
     </nav>
 </div>
 <div class="ProductsCont">
-<div th:each="product[] : ${products}">
+<div th:each="product : ${products}">
     <div class="card" style="width: 18rem; height: 30rem;">
         <img class="card-img-top" src="images/dress1.jpg" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title" th:text="${product.description}">Card title</h5>
             <p class="card-text" th:text="${product.price}"></p>
             <p class="card-text" th:text="${product.size}"></p>
-            <a href="#" class="btn">ADD TO CART</a>
+            <form th:action="@{/addtocart/{id}(id=${product.productID})}" method="post">
+                <input type="submit">ADD TO CART </input>
+            </form>
+
         </div>
     </div>
-    <!--<div class="card" style="width: 18rem; height: 30rem;">
-        <img class="card-img-top" src="images/dress2.jpg" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title" th:text="${product.description}">Card title</h5>
-            <p class="card-text" th:text="${product.price}"></p>
-            <p class="card-text" th:text="${product.size}"></p>
-            <a href="#" class="btn">ADD TO CART</a>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem; height: 30rem;">
-        <img class="card-img-top" src="images/dress3.jpg" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title" th:text="${product.description}">Card title</h5>
-            <p class="card-text" th:text="${product.price}"></p>
-            <p class="card-text" th:text="${product.size}"></p>
-            <a href="#" class="btn">ADD TO CART</a>
-        </div>
-    </div>-->
 </div>
 </div>
-
-
 
 
 
