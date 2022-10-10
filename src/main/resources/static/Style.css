@@ -1,6 +1,9 @@
+
+/* @media screen and (max-width: 780px){ */
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 
 .navbar{
 background-color:lightblue;
@@ -11,11 +14,13 @@ padding: 15px;
 }
 
 .navHeaderTitle{
-  margin-right: 100px;
-     margin-left: 130px;
-     font-weight: bold;
-     color:rgba(110, 64, 3, 0.944);
-     font-family: Apple Chancery, cursive;
+    margin-right: 100px;
+    margin-left: 130px;
+    font-weight: bold;
+    color:rgba(110, 64, 3, 0.944);
+    font-family: Apple Chancery, cursive;
+
+
 }
 
 .container-fluid a {
@@ -24,7 +29,6 @@ padding: 15px;
     font-style: normal;
     margin-right: 10px;
 }
-
 .bannercont{
     background-image: url('/images/Bannerls.jpg');
     height: 550px;
@@ -98,7 +102,6 @@ padding: 15px;
 .imagesCont-sub button:hover{
     background-color: #ff8d1e;
 }
-
 .brandCont{
     margin-top: 80px;
     text-align: center;
