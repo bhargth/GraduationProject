@@ -2,16 +2,13 @@ package com.example.GraduationProject.PresentationLayer;
 
 import com.example.GraduationProject.Business.CustomerService;
 import com.example.GraduationProject.Business.Entity.Customer;
-import com.example.GraduationProject.Business.Entity.Product;
+import com.example.GraduationProject.Business.Entity.Payment;
+import com.example.GraduationProject.Business.PaymentService;
 import com.example.GraduationProject.Business.ProductService;
-import com.example.GraduationProject.Business.ShoppingCart;
-import com.example.GraduationProject.RepositoryLayer.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 public class CustomerController {
@@ -21,6 +18,9 @@ public class CustomerController {
 
 @Autowired
     ProductService prodser;
+
+@Autowired
+    PaymentService paySer;
 
     @GetMapping("/")
     public String home() { return  "homePage" ;}
@@ -45,7 +45,7 @@ return "products";
     public String logIn(@RequestParam("customername") String name, Model model){
 
        if(custser.login(name)){
-           model.addAttribute("customername",name);
+           model.addAttribute("products", prodser.getProducts());
            return "products";
        }else {
            model.addAttribute("message", "Try again!");
@@ -72,12 +72,21 @@ return "products";
     public String addToCart(@PathVariable long productId, Model model){
         custser.addToCart(productId);
         model.addAttribute("products", prodser.getProducts());
-        return "products";
+        return "redirect:/products";
     }
 
+    @GetMapping("/paymentform")
+    public String paymentForm(Model model){
+        model.addAttribute("payment", new Payment());
+        return  "paymentform" ;
+    }
 
-
-
+    @PostMapping("/paymentform")
+    public String makePayment(@ModelAttribute Payment payment, Model model){
+        paySer.makePayment(payment);
+        model.addAttribute("payment", payment);
+        return "orderplace";
+    }
 
 
 

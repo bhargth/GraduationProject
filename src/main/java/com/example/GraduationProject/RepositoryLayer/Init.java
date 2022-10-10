@@ -8,15 +8,15 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/*
-@Component
+
+/*@Component
 public class Init implements CommandLineRunner {
-*/
 
-    /*@Autowired
-    ProductRepository prodrepo;*/
 
-/*    public void saveProduct() {
+    @Autowired
+    ProductRepository prodrepo;
+
+*//*    public void saveProduct() {
         product.setPrice(20);
         product.setSize("M");
         product.setDescription("Floral dress");
@@ -27,19 +27,20 @@ public class Init implements CommandLineRunner {
         prodrepo.save(new Product("Floral dress",20,"M" ));
         prodrepo.save(new Product("dress",80,"M"));
         prodrepo.save(new Product("Floral dress",100,"M"));
-    }*/
+    }*//*
 
 
-    /*public void run(String... args) throws Exception {
+    public void run(String... args) throws Exception {
         prodrepo.saveAll(List.of(
-                new Product("Floral dress",50,"M"),
-                new Product("Dotted dress",180,"S"),
-         new Product("Jeans",220,"XXL"),
-        new Product("Jacket",200,"L"),
-        new Product("Satin dress",100,"Ss"),
-        new Product("shirt",130,"M"))
+                new Product("Floral dress", 50, "M"),
+                new Product("Dotted dress", 180, "S"),
+                new Product("Jeans", 220, "XXL"),
+                new Product("Jacket", 200, "L"),
+                new Product("Satin dress", 100, "Ss"),
+                new Product("shirt", 130, "M"))
         );
 
         System.out.println("Data Saved");
     }*/
+
 

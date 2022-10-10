@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product Form</title>
+</head>
+<body>
+<form method="POST" action="/addproductform" enctype="multipart/form-data">
+    <h1>Add Products</h1>
+    Image: <label path="file">Select a file to upload</label>
+    <input type="file" name="file" />
+
+    Description:<input type="text" name="description" />
+
+    Price:<input type="number" name="price"/>
+
+    Size:<input type="text" name="size"/>
+
+
+    <div class="clearfix">
+        <input type="submit"></input>
+
+    </div>
+
+</form>
+
+<a href="/homePage">HomePage</a>
+</body>
+</html>

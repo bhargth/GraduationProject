@@ -1,9 +1,6 @@
 package com.example.GraduationProject.Business.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Product {
@@ -11,6 +8,9 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long productID;
+
+    @Lob
+    byte[] imageData;
     private int price;
     private String size;
     private String description;
@@ -18,18 +18,22 @@ public class Product {
     public Product() {
     }
 
-    public Product(String description, int price, String size) {
+    public Product(int price, String size, String description) {
         this.price = price;
         this.size = size;
         this.description = description;
     }
 
-    public Product(long productID, String description, int price, String size) {
-        this.productID = productID;
+    public Product(byte[] imageData, int price, String size, String description) {
+        this.imageData = imageData;
         this.price = price;
         this.size = size;
         this.description = description;
     }
+
+    public Product(byte[] bytes) {
+    }
+
 
     public long getProductID() {
         return productID;
@@ -61,6 +65,14 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public byte[] getImageData() {
+        return imageData;
+    }
+
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
     }
 
     @Override

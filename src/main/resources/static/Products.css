@@ -32,16 +32,21 @@ display: inline-grid;
 }
 
 .card{
-  margin: 30px;
-  margin-left: 110px;
-  margin-right: 80px;
+margin: 30px;
+margin-left: 110px;
+margin-right: 80px;
 }
 .card-img-top{
-  height: 75%;
+height: 75%;
 }
 
-
-
+.clearfix input[type=submit]{
+  border: 2px solid black;
+  background-color: lightblue;
+  border-radius: 5px;
+  padding: 4px;
+  color: black;
+}
 
 
 
