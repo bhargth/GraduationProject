@@ -35,6 +35,7 @@ public class CustomerController {
 public String signupSubmit(@ModelAttribute Customer customer, Model model){
 custser.signUp(customer);
 model.addAttribute("products", prodser.getProducts());
+model.addAttribute("customername", customer.getName());
 return "products";
 }
 
@@ -46,6 +47,7 @@ return "products";
 
        if(custser.login(name)){
            model.addAttribute("products", prodser.getProducts());
+           model.addAttribute("customername", name);
            return "products";
        }else {
            model.addAttribute("message", "Try again!");
